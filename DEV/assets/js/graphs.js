@@ -13,8 +13,6 @@
 })(jQuery);
 
 function TestClickHandler() {
-	alert('winning');
 	// redirect to the graphs here...
-	window.location = "Graphs/Dashboard.html";
-
+	window.location = "~/Graphs/Dashboard.html";
 }
