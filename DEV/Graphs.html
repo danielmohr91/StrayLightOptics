@@ -12,6 +12,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -21,18 +22,22 @@
 					<header id="header" class="container">
 						<div class="row">
 							<div class="12u">
+									<div id="includedHeader">
 
-								<!-- Logo -->
-									<h1><a href="#" id="logo">Halcyonic</a></h1>
-
-								<!-- Nav -->
+									<!-- <h1><a href="#" id="logo">Stray Light Optics</a></h1>
 									<nav id="nav">
 										<a href="index.html">Homepage</a>
 										<a href="threecolumn.html">Three Column</a>
-										<a href="twocolumn1.html">Two Column #1</a>
-										<a href="twocolumn2.html">Two Column #2</a>
+										<a href="Graphs.html">Stray Light Optics</a>
+										<a href="twocolumn1.html">Two Column</a>
 										<a href="onecolumn.html">One Column</a>
-									</nav>
+									</nav> -->
+									<script>
+										$(function(){
+											debugger; 
+										  $("#includedHeader").load("Header.html"); 
+										});
+									</script>
 
 							</div>
 						</div>
@@ -53,20 +58,20 @@
 												<h3>A generic two column layout</h3>
 											</header>
 											<p>
-												Options for graphs can be seen here: 
-												<!-- <a href="https://github.com/mbostock/d3/wiki/Gallery" class="button-big">Graphing examples</a> -->
-											<!-- 	<button class="button-hover" style="vertical-align:middle"><span>Graphing Examples </span></button>-->	
-												<button class="button-medium" style="vertical-align:middle"><span>Test </span></button>
-												<!-- probably want to style a link instead of using the button here -->
+												Options for graphs can be seen here: <br>
+												<button id="test" class="button-medium" style="vertical-align:middle"><span>Test </span></button>
+
 												<br>
-												<a href="Gaussian.html" class="button-medium">Guassian Example</a>
+												<a href="Gaussian.html" class="button-medium" style="vertical-align: middle">Test</a>
+												<!-- <a href="Gaussian.html" class="button-medium">Guassian Example</a>
 												<br>
-												<a href="BarAndLine.html" class="button-medium">Dashboard Example</a>
+												<a href="BarAndLine.html" class="button-medium">Dashboard Example</a> -->
 										</section>
 										<section>
 											<h2>Example Dashboard Graph</h2>
 											<div id='dashboard'>
 											</div>
+											<script src="http://d3js.org/d3.v3.min.js"></script>
 											<script src="assets/js/Graphs/Dashboard.js"></script> 
 										</section>
 
@@ -177,7 +182,7 @@
 
 			<!-- Copyright -->
 				<div id="copyright">
-					&copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+					&copy; Daniel Mohr. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
 				</div>
 
 		</div>
@@ -189,6 +194,7 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/graphs.js"</script>
 			<script src="http://d3js.org/d3.v3.min.js"></script>  <!-- Graphing library -->
 
 	</body>
