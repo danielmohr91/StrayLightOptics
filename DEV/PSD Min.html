@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://maurizzzio.github.io/function-plot/js/function-plot.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+  
+  <!-- Get inputs A, B, C here -->
+<div id="psd">
+	A: <input id='A'></input>
+	B: <input id='B'></input>
+	C: <input id='C'></input>
+</div>
+
+<script type="text/javascript">
+	functionPlot({
+		target: '#psd',
+		data: [{
+			fn: ''
+		}]
+	})
+</script>
+
+  <div id="demo"></div>
+  <script> 
+
+	functionPlot({
+	  target: '#demo',
+	  data: [{
+	    fn: 'x^3',
+	    derivative: {
+	      fn: '2x',
+	      updateOnMouseMove: true
+	    }
+	  }]
+	});
+
+  </script>
+</body>
+</html>
