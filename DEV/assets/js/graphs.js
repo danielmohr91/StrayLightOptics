@@ -5,11 +5,7 @@
 */
 
 (function($) {
-
-	debugger; 
 	document.getElementById('test').onclick = TestClickHandler;
-
-
 })(jQuery);
 
 function TestClickHandler() {

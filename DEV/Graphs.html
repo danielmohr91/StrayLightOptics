@@ -12,6 +12,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -21,18 +22,13 @@
 					<header id="header" class="container">
 						<div class="row">
 							<div class="12u">
+									<div id="includedHeader">
 
-								<!-- Logo -->
-									<h1><a href="#" id="logo">Halcyonic</a></h1>
-
-								<!-- Nav -->
-									<nav id="nav">
-										<a href="index.html">Homepage</a>
-										<a href="threecolumn.html">Three Column</a>
-										<a href="twocolumn1.html">Two Column #1</a>
-										<a href="twocolumn2.html">Two Column #2</a>
-										<a href="onecolumn.html">One Column</a>
-									</nav>
+									<script>
+										$(function(){
+										  $("#includedHeader").load("Header.html"); 
+										});
+									</script>
 
 							</div>
 						</div>
@@ -54,9 +50,8 @@
 											</header>
 											<p>
 												Options for graphs can be seen here: <br>
-											<!-- 	<a href="https://github.com/mbostock/d3/wiki/Gallery" class="button-big">Graphing examples</a>
-												<button class="button-hover" style="vertical-align:middle"><span>Graphing Examples </span></button> -->
 												<button id="test" class="button-medium" style="vertical-align:middle"><span>Test </span></button>
+
 												<br>
 												<a href="Gaussian.html" class="button-medium" style="vertical-align: middle">Test</a>
 												<!-- <a href="Gaussian.html" class="button-medium">Guassian Example</a>
