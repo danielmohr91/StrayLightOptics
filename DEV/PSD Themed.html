@@ -66,19 +66,23 @@
 												<form>
 													<h3>Inputs</h3>
 													<label for="A">A:</label>
-													<input type="number" id='A'></input><br>
+													<input type="number" id='A' value=1 class="params"></input><br>
 													<label for="B">B:</label>
-													<input type="number" id='B'></input><br>
+													<input type="number" id='B' value=1000 class="params"></input><br>
 													<label for="C">C:</label>
-													<input type="number" id='C'></input><br>
-													<p>
+													<input type="number" id='C' value=1.8 class="params"></input><br><br>
+													<label for="AP">AP:</label>
+													<input type="number" id="AP">
+													<!-- <p>
 														<label for="testSlider" style="display: inline-block;width: 240px; text-align: right">Test:
 															<span id="testSlider-value">...</span>
 														</label>
 														<input type="range" min="1" max="100" id="testSlider">
-													</p>
+													</p> -->
 												</form>
 												<div id="psd"></div>
+												<div id="circle"></div>
+												<div id='testPSD'></div>
 											</div>
 
 											<script type="text/javascript">
@@ -89,8 +93,62 @@
 														// { fn: 'A / (2(1+B)^2)^(C/2)'},
 														{ fn: 'x^2'},
 														{ fn: 'x^3'}
+														// {
+														// 	fn: function(scope) {
+														// 		var A = 10
+														// 		var B = 5
+														// 		return A 
+														// 	}
+														// }
 													]
 												})
+
+												// functionPlot({
+												//   target: '#testPSD',
+												//   data: [{
+												//     // uses interval arithmetic by default
+												//     fn: function (scope) {
+												//       // scope.x = {lo: Number, hi: number}
+												//       // simulate a line e.g. y = x
+												//       return {
+												//         lo: scope.x.lo,
+												//         hi: scope.x.hi
+												//       }
+												//     }
+												//   }]
+												// })
+
+												functionPlot({
+												  target: '#circle',
+												  data: [{
+												    // force the use of builtIn math
+												    graphType: 'polyline',
+												    fn: function (scope) {
+												      // scope.x = Number
+												      var x = scope.x
+												      return x * x
+												    }
+												  }, {
+												    fnType: 'polar',
+												    graphType: 'polyline',
+												    r: function (scope) {
+												      // scope.theta = number
+												      var r0 = 0
+												      var a = 1
+												      var gamma = 0
+												      return r0 * Math.cos(scope.theta - gamma) +
+												        Math.sqrt(a * a - r0 * r0 * Math.pow(Math.sin(scope.theta - gamma), 2))
+												    }
+												  }]
+												})
+
+												// Update AP field
+												$(".params").change(function() {calculateAP();});
+
+												function calculateAP() {
+													alert("calculate ap here...");
+												}
+
 											</script>
 											
 										</section>
