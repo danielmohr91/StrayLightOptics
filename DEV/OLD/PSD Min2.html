@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://maurizzzio.github.io/function-plot/js/function-plot.js"></script>
+  
+  <!-- CSS For Site Theme -->
+  <!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
+  
+  <!-- Bootstrap and JQuery -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+  <h1>PSD Plotting Fun</h1>
+  <br><br>
+  <!-- Get inputs A, B, C here -->
+<div id="psd">
+	<form>
+		<h3>Inputs</h3>
+		<label for="A">A:</label>
+		<input type="number" id='A'></input><br>
+		<label for="B">B:</label>
+		<input type="number" id='B'></input><br>
+		<label for="C">C:</label>
+		<input type="number" id='C'></input><br>
+		<p>
+			<label for="testSlider" style="display: inline-block;width: 240px; text-align: right">Test:
+				<span id="testSlider-value">...</span>
+			</label>
+			<input type="range" min="1" max="100" id="testSlider">
+		</p>
+	</form>
+</div>
+
+<script type="text/javascript">
+	functionPlot({
+		target: '#psd',
+		data: [{
+			fn: ''
+		}]
+	})
+</script>
+
+<br>
+<h4>Demo Graph</h4>
+  <div id="demo"></div>
+  <script> 
+
+	functionPlot({
+	  target: '#demo',
+	  data: [{
+	    fn: 'x^3',
+	    derivative: {
+	      fn: '2x',
+	      updateOnMouseMove: true
+	    }
+	  }]
+	});
+
+  </script>
+</body>
+</html>

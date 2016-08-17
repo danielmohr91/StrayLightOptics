@@ -2,27 +2,12 @@
 
 <html>
 	<head>
-		<title>Graphs</title>
+		<title>Research</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-		<!-- Graphing imports -->
-		<script src="http://d3js.org/d3.v3.min.js"></script>
-  		<script src="http://maurizzzio.github.io/function-plot/js/function-plot.js"></script>
-
-
-		<!-- Bootstrap and JQuery -->
-  		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	    <!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-
-	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-
-
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -59,100 +44,55 @@
 									<!-- Main Content -->
 										<section>
 											<header>
-												<h2>PSD Graphing Fun</h2>
-												<h3>Distribution of power into frequency components composing that signal</h3>
+												<h2>Two Column #1</h2>
+												<h3>A generic two column layout</h3>
 											</header>
-											
-											<div id="psd-parent">
-												<form>
-													<h3>Inputs</h3>
-													<br>TODO: interactively update graph below based on input from DOM elements below...<br> 
-													<label for="A">A:</label>
-													<input type="number" id='A' value=1 class="params"></input><br>
-													<label for="B">B:</label>
-													<input type="number" id='B' value=1000 class="params"></input><br>
-													<label for="C">C:</label>
-													<input type="number" id='C' value=1.8 class="params"></input><br><br>
-													<label for="AP">AP:</label>
-													<input type="number" id="AP">
-													<!-- <p>
-														<label for="testSlider" style="display: inline-block;width: 240px; text-align: right">Test:
-															<span id="testSlider-value">...</span>
-														</label>
-														<input type="range" min="1" max="100" id="testSlider">
-													</p> -->
-												</form>
-												<div id="psd"></div>
-												<div id="circle"></div>
-												<div id='testPSD'></div>
-											</div>
-
-											<script type="text/javascript">
-												debugger; 
-												functionPlot({
-													target: '#psd',
-													data: [
-														// { fn: 'A / (2(1+B)^2)^(C/2)'},
-														{ fn: 'x^2'},
-														{ fn: 'x^3'}
-														// {
-														// 	fn: function(scope) {
-														// 		var A = 10
-														// 		var B = 5
-														// 		return A 
-														// 	}
-														// }
-													]
-												})
-
-												// functionPlot({
-												//   target: '#testPSD',
-												//   data: [{
-												//     // uses interval arithmetic by default
-												//     fn: function (scope) {
-												//       // scope.x = {lo: Number, hi: number}
-												//       // simulate a line e.g. y = x
-												//       return {
-												//         lo: scope.x.lo,
-												//         hi: scope.x.hi
-												//       }
-												//     }
-												//   }]
-												// })
-
-												functionPlot({
-												  target: '#circle',
-												  data: [{
-												    // force the use of builtIn math
-												    graphType: 'polyline',
-												    fn: function (scope) {
-												      // scope.x = Number
-												      var x = scope.x
-												      return x * x
-												    }
-												  }, {
-												    fnType: 'polar',
-												    graphType: 'polyline',
-												    r: function (scope) {
-												      // scope.theta = number
-												      var r0 = 0
-												      var a = 1
-												      var gamma = 0
-												      return r0 * Math.cos(scope.theta - gamma) +
-												        Math.sqrt(a * a - r0 * r0 * Math.pow(Math.sin(scope.theta - gamma), 2))
-												    }
-												  }]
-												})
-
-												// Update AP field
-												$(".params").change(function() {calculateAP();});
-
-												function calculateAP() {
-													alert("calculate ap here...");
-												}
-
-											</script>
-											
+											<p>
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam metus, congue
+												vel suscipit ut, dignissim non risus. Vestibulum ante est, fringilla nec placerat
+												eu, vestibulum vitae diam. Integer eget egestas eros. Duis enim erat, mollis quis
+												lacinia eget, blandit nec ipsum. Donec vitae turpis ipsum. Aliquam mauris libero,
+												sagittis in eleifend at, mattis imperdiet velit. Donec urna risus, rutrum molestie
+												varius ac, lacinia sit amet augue. Nam ultrices elementum eros.
+											</p>
+											<p>
+												Sed faucibus viverra ligula, non varius magna semper vitae. Donec eu justo ut ipsum
+												hendrerit congue nec eu risus. Cum sociis natoque penatibus et magnis dis parturient
+												montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing
+												egestas tempus. Cras convallis odio sit amet risus convallis porttitor. Integer
+												vehicula fermentum ligula at pretium. Suspendisse semper iaculis eros, eu aliquam
+												justo imperdiet vel. Proin nec dictum mi. Duis commodo enim non tellus interdum
+												elit. Suspendisse fermentum adipiscing nisi, a tempor libero malesuada at. Morbi
+												lacinia dui adipiscing risus eleifend tincidunt. Proin eu mauris eu tellus eleifend
+												hendrerit.
+											</p>
+											<p>
+												Mauris sit amet tellus urna. In facilisis, tortor vitae ultricies egestas, odio
+												mi rhoncus arcu, quis euismod felis felis et velit. Mauris varius consectetur erat
+												egestas tempus. Cras convallis odio sit amet risus convallis porttitor. Integer
+												vehicula fermentum ligula at pretium. Suspendisse semper iaculis eros, eu aliquam
+												justo imperdiet vel. Proin nec dictum mi. Duis commodo enim non tellus interdum
+												iaculis. Phasellus ultrices diam sit amet orci lacinia sed consequat dui auctor.
+											</p>
+											<p>
+												Sed faucibus viverra ligula, non varius magna semper vitae. Donec eu justo ut ipsum
+												hendrerit congue nec eu risus. Cum sociis natoque penatibus et magnis dis parturient
+												montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing
+												egestas tempus. Cras convallis odio sit amet risus convallis porttitor. Integer
+												vehicula fermentum ligula at pretium. Suspendisse semper iaculis eros, eu aliquam
+												justo imperdiet vel. Proin nec dictum mi. Duis commodo enim non tellus interdum
+												elit. Suspendisse fermentum adipiscing nisi, a tempor libero malesuada at. Morbi
+												lacinia dui adipiscing risus eleifend tincidunt. Proin eu mauris eu tellus eleifend
+												hendrerit.
+											</p>
+											<p>
+												Mauris sit amet tellus urna. In facilisis, tortor vitae ultricies egestas, odio
+												mi rhoncus arcu, quis euismod felis felis et velit. Mauris varius consectetur erat
+												egestas tempus. Cras convallis odio sit amet risus convallis porttitor. Integer
+												vehicula fermentum ligula at pretium. Suspendisse semper iaculis eros, eu aliquam
+												justo imperdiet vel. Proin nec dictum mi. Duis commodo enim non tellus interdum
+												iaculis. Phasellus ultrices diam sit amet orci lacinia sed consequat dui auctor.
+											</p>
 										</section>
 
 								</div>
