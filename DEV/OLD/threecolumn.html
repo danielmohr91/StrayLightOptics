@@ -1,14 +1,11 @@
 <!DOCTYPE HTML>
-<!--
-	Stray Light Optics by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
 		<title>Three Column - Stray Light Optics by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -25,14 +22,13 @@
 								<!-- Logo -->
 									<h1><a href="#" id="logo">Stray Light Optics</a></h1>
 
-								<!-- Nav -->
-									<nav id="nav">
-										<a href="index.html">Homepage</a>
-										<a href="threecolumn.html">Three Column</a>
-										<a href="twocolumn1.html">Two Column #1</a>
-										<a href="twocolumn2.html">Two Column #2</a>
-										<a href="onecolumn.html">One Column</a>
-									</nav>
+									<div id="includedHeader">
+
+									<script>
+										$(function(){
+										  $("#includedHeader").load("Header.html"); 
+										});
+									</script>
 
 							</div>
 						</div>
