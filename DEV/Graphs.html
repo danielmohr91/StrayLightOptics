@@ -9,7 +9,7 @@
 		<!-- Graphing imports -->
 		<script src="http://d3js.org/d3.v3.min.js"></script>
   		<script src="http://maurizzzio.github.io/function-plot/js/function-plot.js"></script>
-
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 		<!-- Bootstrap and JQuery -->
   		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -45,10 +45,6 @@
 								<!-- Logo -->
 									<h1><a href="#" id="logo">Stray Light Optics</a></h1>
 
-
-								<!-- Logo -->
-									<h1><a href="#" id="logo">Stray Light Optics</a></h1>
-
 								<!-- Nav -->
 									<nav id="nav">
 										<a href="index.html">Homepage</a>
@@ -76,7 +72,38 @@
 												<h3>Distribution of power into frequency components composing that signal</h3>
 											</header>
 											
-											<div id="psd-parent">
+											<div class="panel panel-default">
+										  		<div class="panel-heading">
+											    	<h3 class="panel-title">PSD Graphing</h3>
+									  			</div>
+										  		<div class="panel-body">
+													<h3>Inputs</h3>
+													<br>TODO: interactively update graph below based on input from DOM elements below...<br> 
+													
+													<!-- Clean up the alignment on these inputs -->
+													<div class="form-horizontal span5">
+														
+														<div class="control-group">
+															<label for="A">A:</label>
+															<input type="number" id='A' value=1 class="params"></input><br>
+														</div>
+
+														<label for="B">B:</label>
+														<input type="number" id='B' value=1000 class="params"></input><br>
+														<label for="C">C:</label>
+														<input type="number" id='C' value=1.8 class="params"></input><br><br>
+														<label for="AP">AP:</label>
+														<input type="number" id="AP">
+
+														<div id="psd"></div>
+														<div id="circle"></div>
+														<div id='testPSD'></div>
+													</div>
+										  		</div>
+											</div>
+
+											
+											<!-- <div id="psd-parent">
 												<form>
 													<h3>Inputs</h3>
 													<br>TODO: interactively update graph below based on input from DOM elements below...<br> 
@@ -88,17 +115,17 @@
 													<input type="number" id='C' value=1.8 class="params"></input><br><br>
 													<label for="AP">AP:</label>
 													<input type="number" id="AP">
-													<!-- <p>
+													 <p>
 														<label for="testSlider" style="display: inline-block;width: 240px; text-align: right">Test:
 															<span id="testSlider-value">...</span>
 														</label>
 														<input type="range" min="1" max="100" id="testSlider">
-													</p> -->
+													</p> 
 												</form>
 												<div id="psd"></div>
 												<div id="circle"></div>
 												<div id='testPSD'></div>
-											</div>
+											</div> -->
 
 											<script type="text/javascript">
 												debugger; 
@@ -273,9 +300,8 @@
 					</footer>
 				</div>
 
-			<!-- Copyright -->
-				<div id="copyright">
-					&copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+			<div id="copyright">
+					&copy; Stray Light Optics. All rights reserved.
 				</div>
 
 		</div>
