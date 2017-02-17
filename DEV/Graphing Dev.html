@@ -24,17 +24,69 @@
 <script type="text/javascript">
 
     // IIFE to avoid polluting global scope
-    (function ($) {
+    (function($) {
 
-        // Local
+        // Locally scoped variables
+        var psdCalculations;
+        var psdHandsontable;
+        var isTableRendered = false;
 
         // Click Handlers
         $(document)
             .ready(function($) {
                 $("#btnGraph")
                     .click(function() {
-                        alert("Load Location grid here...");
-                        $('table.highchart').highchartTable();
+
+                        debugger;
+                        // Highcharts is null here... need to pull this in. RESUME HERE
+                        window.Highcharts.chart('graphDiv',
+                        {
+                            title: {
+                                text: 'Solar Employment Growth by Sector, 2010-2016'
+                            },
+
+                            subtitle: {
+                                text: 'Source: thesolarfoundation.com'
+                            },
+
+                            yAxis: {
+                                title: {
+                                    text: 'Number of Employees'
+                                }
+                            },
+                            legend: {
+                                layout: 'vertical',
+                                align: 'right',
+                                verticalAlign: 'middle'
+                            },
+
+                            plotOptions: {
+                                series: {
+                                    pointStart: 2010
+                                }
+                            },
+
+                            series: [
+                                {
+                                    name: 'Installation',
+                                    data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+                                }, {
+                                    name: 'Manufacturing',
+                                    data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+                                }, {
+                                    name: 'Sales & Distribution',
+                                    data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+                                }, {
+                                    name: 'Project Development',
+                                    data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+                                }, {
+                                    name: 'Other',
+                                    data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+                                }
+                            ]
+
+                        });
+
                     });
             });
 
@@ -43,14 +95,20 @@
                 $("#GenerateTableValues")
                     .click(function() {
 
+                        // Only render once
+                        if (isTableRendered) {
+                            this.disabled = true; // Disable the button
+                            return;
+                        }
+
                         // Example data
                         // TODO: Resume here...
-                        var data = getGridData();
+                        psdCalculations = getGridData();
 
                         var container = document.getElementById('exampleTable');
-                        var hot = new window.Handsontable(container,
+                        psdHandsontable = new window.Handsontable(container,
                         {
-                            data: data,
+                            data: psdCalculations,
                             rowHeaders: true,
                             // colHeaders: true 
                             colHeaders: [
@@ -68,10 +126,14 @@
                                 { data: 'rmsb2' }
                             ]
                         });
-                    });
-            });
+                        isTableRendered = true;
+                        this.disabled = true; // Disable the button
+                    }); // End of GenerateTableValues Scope
+
+            }); // End of IIFE scope
 
         function getGridData() {
+            // Collapse this in IDE to save space
             var data = [
                 {
                     step: '-4',
@@ -679,7 +741,7 @@
             ];
             return data;
         }
-    })(jQuery);
+    })(jQuery); // Pass jQuery reference into IIFE as '$'
 </script>
 </head>
 
@@ -703,132 +765,103 @@
 
 <br>
 
-<!-- <div class="panel panel-default">
-<div class="panel-heading">
-    <h3 class="panel-title">Inputs</h3>
-</div>
-<div class="panel-body">
-    Panel content
-</div>
--->
-
 <div class="container">
-    <br>
-    <p>
-        <i>Enter params</i>
-    </p>
 
-    <form>
-        <div class="form-group">
-            <div class="fluid-container">
-                <!-- Input 1 -->
-                <div class="col-xs-1 vcenter">
-                    <!-- <label for="DealID" class="control-label text-right">Deal ID</label> -->
-                    <p class="text-right vcenter">
-                        <b>Input A</b>
-                    </p>
-                </div>
-                <div class="col-xs-2 vcenter">
-                    <input type="text" class="form-control col-xs-2 vcenter" id="inputA" placeholder="1500">
-                </div>
-
-                <!-- Input 2 -->
-                <div class="col-xs-1 vcenter">
-                    <!-- <label for="DealID" class="control-label text-right">Deal ID</label> -->
-                    <p class="text-right vcenter">
-                        <b>Input B</b>
-                    </p>
-                </div>
-                <div class="col-xs-2 vcenter">
-                    <input type="text" class="form-control col-xs-2 vcenter" id="inputB" placeholder="1500">
-                </div>
-
-                <!-- Input 3 -->
-                <div class="col-xs-1 vcenter">
-                    <!-- <label for="DealID" class="control-label text-right">Deal ID</label> -->
-                    <p class="text-right vcenter">
-                        <b>Input C</b>
-                    </p>
-                </div>
-                <div class="col-xs-2 vcenter">
-                    <input type="text" class="form-control col-xs-2 vcenter" id="inputC" placeholder="1500">
-                </div>
-
-                <!-- Input 4 -->
-                <div class="col-xs-1 vcenter">
-                    <!-- <label for="DealID" class="control-label text-right">Deal ID</label> -->
-                    <p class="text-right vcenter">
-                        <b>AP</b>
-                    </p>
-                </div>
-                <div class="col-xs-2 vcenter">
-                    <input type="text" class="form-control col-xs-2 vcenter" id="inputAP" placeholder="AP">
-                </div>
+    <!-- Force new line -->
+    <div class="clearfix"></div>
+    <div class="fluid-container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Graphing</h3>
             </div>
+            <div class="panel-body">
+                <button id="btnGraph" class="btn btn-primary" type="button">Render Graph</button>
+                <div id="graphDiv"></div>
 
-            <!-- Force new line -->
-            <div class="clearfix"></div>
-
-            <div class="fluid-container">
-                <br/>
-                <div class="col-xs-2">
-                    <button id="btnGraph" class="btn btn-primary" type="button">Render Graph</button>
-                </div>
             </div>
         </div>
-    </form>
+
+    </div>
 
     <!-- Force new line -->
     <div class="clearfix"></div>
-    <div class="clearfix"></div>
     <div class="fluid-container">
-        <h3>Generate Table</h3>
+
+        <!--<h3>Generate Table</h3>
         <button id="GenerateTableValues" class="btn btn-primary">Calculate PSD Values</button>
-        <div id="exampleTable"></div>
-    </div>
+        <div id="exampleTable"></div>-->
 
-    <!-- Force new line -->
-    <div class="clearfix"></div>
-    <div class="fluid-container">
-        <h3>Points to Graph</h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Generate Table</h3>
+            </div>
+            <div class="panel-body">
 
-        <table class="highchart"
-               data-graph-container=".. .. .highchart-container"
-               data-graph-type="column">
-            <caption>Columnular Graph</caption>
-            <thead>
-            <tr>
-                <th>Step</th>
-                <th>Freq</th>
-                <th>PSD</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Step 1</td>
-                <td>8000</td>
-                <td>2000</td>
-            </tr>
+                <!-- Parameters for the table -->
+                <form>
+                    <p>
+                        <i>Enter params</i>
+                    </p>
 
-            <tr>
-                <td>Step 2</td>
-                <td>8000</td>
-                <td>2000</td>
-            </tr>
+                    <div class="form-group">
+                        <div class="fluid-container">
+                            <!-- Input 1 -->
+                            <div class="col-xs-1 vcenter">
+                                <!-- <label for="DealID" class="control-label text-right">Deal ID</label> -->
+                                <p class="text-right vcenter">
+                                    <b>Input A</b>
+                                </p>
+                            </div>
+                            <div class="col-xs-2 vcenter">
+                                <input type="text" class="form-control col-xs-2 vcenter" id="inputA" placeholder="1500">
+                            </div>
 
-            <tr>
-                <td>Step 3</td>
-                <td>8000</td>
-                <td>2000</td>
-            </tr>
+                            <!-- Input 2 -->
+                            <div class="col-xs-1 vcenter">
+                                <!-- <label for="DealID" class="control-label text-right">Deal ID</label> -->
+                                <p class="text-right vcenter">
+                                    <b>Input B</b>
+                                </p>
+                            </div>
+                            <div class="col-xs-2 vcenter">
+                                <input type="text" class="form-control col-xs-2 vcenter" id="inputB" placeholder="1500">
+                            </div>
 
-            </tbody>
-        </table>
-    </div>
+                            <!-- Input 3 -->
+                            <div class="col-xs-1 vcenter">
+                                <!-- <label for="DealID" class="control-label text-right">Deal ID</label> -->
+                                <p class="text-right vcenter">
+                                    <b>Input C</b>
+                                </p>
+                            </div>
+                            <div class="col-xs-2 vcenter">
+                                <input type="text" class="form-control col-xs-2 vcenter" id="inputC" placeholder="1500">
+                            </div>
 
-    <div id="graph">
-        <!-- Grpah goes here -->
+                            <!-- Input 4 -->
+                            <div class="col-xs-1 vcenter">
+                                <!-- <label for="DealID" class="control-label text-right">Deal ID</label> -->
+                                <p class="text-right vcenter">
+                                    <b>AP</b>
+                                </p>
+                            </div>
+                            <div class="col-xs-2 vcenter">
+                                <input type="text" class="form-control col-xs-2 vcenter" id="inputAP" placeholder="AP">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Button To Generate Table and Empty Element to bind table to on click event -->
+                <div class="clearfix"></div>
+                <br/>
+                <button id="GenerateTableValues" class="btn btn-primary">Calculate PSD Values</button>
+                <br/> <br/>
+                <div id="exampleTable"></div>
+            </div>
+        </div>
     </div>
 
 </div>
+</body>
 </html>
