@@ -51,6 +51,10 @@
                 $("#inputC").val(1.8);
                 $("#inputAP").val(calculateAp());
 
+                $("#inputA").change(function () { $("#inputAP").val(calculateAp()); });
+                $("#inputB").change(function () { $("#inputAP").val(calculateAp()); });
+                $("#inputC").change(function () { $("#inputAP").val(calculateAp()); });
+
                 $("#checkboxLogorithmic")
                     .click(function() {
                         isLogorithmic = $(this).is(':checked');
@@ -97,6 +101,8 @@
                         isTableRendered = true;
                         this.disabled = true; // Disable the button
                     }); // End of GenerateTableValues Scope
+
+
             });
 
         function loadGraph() {
@@ -171,7 +177,6 @@
             var ap = apDividend / apDivisor;
 
             return ap;
-
         }
 
         function gammaln(param) {
@@ -897,7 +902,7 @@
                                     <b>AP</b>
                                 </p>
                             </div>
-                            <div class="col-xs-2 vcenter">
+                            <div class="col-xs-2 vcenter disabled">
                                 <input type="text" class="form-control col-xs-2 vcenter" id="inputAP" placeholder="AP">
                             </div>
                         </div>
