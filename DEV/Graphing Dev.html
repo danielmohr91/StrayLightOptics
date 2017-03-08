@@ -51,9 +51,9 @@
                 $("#inputC").val(1.8);
                 $("#inputAP").val(calculateAp());
 
-                $("#inputA").change(function () { $("#inputAP").val(calculateAp()); });
-                $("#inputB").change(function () { $("#inputAP").val(calculateAp()); });
-                $("#inputC").change(function () { $("#inputAP").val(calculateAp()); });
+                $("#inputA").on('input', function() { $("#inputAP").val(calculateAp()); });
+                $("#inputB").on('input', function() { $("#inputAP").val(calculateAp()); });
+                $("#inputC").on('input', function() { $("#inputAP").val(calculateAp()); });
 
                 $("#checkboxLogorithmic")
                     .click(function() {
@@ -62,48 +62,52 @@
                     });
 
                 $("#btnGraph")
-                    .click(function() {
+                    .click(function () {
+                        if (!isTableRendered)
+                            generateTable();
                         loadGraph();
                     });
 
 
                 $("#GenerateTableValues")
                     .click(function() {
-
-                        // Only render once
-                        if (isTableRendered) {
-                            this.disabled = true; // Disable the button
-                            return;
-                        }
-
-                        psdCalculations = getGridData();
-
-                        var container = document.getElementById('exampleTable');
-                        psdHandsontable = new window.Handsontable(container,
-                        {
-                            data: psdCalculations,
-                            rowHeaders: true,
-                            // colHeaders: true 
-                            colHeaders: [
-                                'Step', 'freq (1/micron)', 'Intermediary Calculation (Hide This)', 'PSD2 (nm^4)',
-                                'RMS DENSITY',
-                                'RMS^2', 'RMSB^2'
-                            ],
-                            columns: [
-                                { data: 'step' },
-                                { data: 'freq' },
-                                { data: 'hidden', readOnly: true },
-                                { data: 'psd2' },
-                                { data: 'rmsDensity' },
-                                { data: 'rms2' }
-                            ]
-                        });
-                        isTableRendered = true;
-                        this.disabled = true; // Disable the button
+                        generateTable();
+                        this.disabled = true; // Disable the "Generate" button
                     }); // End of GenerateTableValues Scope
-
-
             });
+
+        function generateTable() {
+
+            // Only render once
+            if (isTableRendered) {
+                this.disabled = true; // Disable the button
+                return;
+            }
+
+            psdCalculations = getGridData();
+
+            var container = document.getElementById('exampleTable');
+            psdHandsontable = new window.Handsontable(container,
+            {
+                data: psdCalculations,
+                rowHeaders: true,
+                // colHeaders: true 
+                colHeaders: [
+                    'Step', 'freq (1/micron)', 'Intermediary Calculation (Hide This)', 'PSD2 (nm^4)',
+                    'RMS DENSITY',
+                    'RMS^2', 'RMSB^2'
+                ],
+                columns: [
+                    { data: 'step' },
+                    { data: 'freq' },
+                    { data: 'hidden', readOnly: true },
+                    { data: 'psd2' },
+                    { data: 'rmsDensity' },
+                    { data: 'rms2' }
+                ]
+            });
+            isTableRendered = true;
+        }
 
         function loadGraph() {
             // get the data from handsontable here
@@ -795,6 +799,20 @@
         ];
 
     })(jQuery, math); // End of IIFE scope. Pass jQuery reference into IIFE as '$'
+
+    // Global Functions
+    function validateNumeric(e) {
+        var theEvent = e || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+        var regex = /[0-9]|\./;
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) theEvent.preventDefault();
+        }
+    }
+
+
 </script>
 </head>
 
@@ -844,13 +862,9 @@
     <div class="clearfix"></div>
     <div class="fluid-container">
 
-        <!--<h3>Generate Table</h3>
-        <button id="GenerateTableValues" class="btn btn-primary">Calculate PSD Values</button>
-        <div id="exampleTable"></div>-->
-
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Generate Table</h3>
+                <h3 class="panel-title">PSD Calculations</h3>
             </div>
             <div class="panel-body">
 
@@ -870,7 +884,7 @@
                                 </p>
                             </div>
                             <div class="col-xs-2 vcenter">
-                                <input type="text" class="form-control col-xs-2 vcenter" id="inputA" placeholder="1500">
+                                <input type="text" class="form-control col-xs-2 vcenter" id="inputA" placeholder="Enter number" onkeypress="validateNumeric(event)">
                             </div>
 
                             <!-- Input 2 -->
@@ -881,7 +895,7 @@
                                 </p>
                             </div>
                             <div class="col-xs-2 vcenter">
-                                <input type="text" class="form-control col-xs-2 vcenter" id="inputB" placeholder="1500">
+                                <input type="text" class="form-control col-xs-2 vcenter" id="inputB" placeholder="Enter number" onkeypress="validateNumeric(event)">
                             </div>
 
                             <!-- Input 3 -->
@@ -892,7 +906,7 @@
                                 </p>
                             </div>
                             <div class="col-xs-2 vcenter">
-                                <input type="text" class="form-control col-xs-2 vcenter" id="inputC" placeholder="1500">
+                                <input type="text" class="form-control col-xs-2 vcenter" id="inputC" placeholder="Enter number" onkeypress="validateNumeric(event)">
                             </div>
 
                             <!-- Input 4 -->
@@ -903,18 +917,19 @@
                                 </p>
                             </div>
                             <div class="col-xs-2 vcenter disabled">
-                                <input type="text" class="form-control col-xs-2 vcenter" id="inputAP" placeholder="AP">
+                                <input type="text" class="form-control col-xs-2 vcenter" id="inputAP" placeholder="AP" readonly>
                             </div>
                         </div>
                     </div>
                 </form>
 
-                <!-- Button To Generate Table and Empty Element to bind table to on click event -->
                 <div class="clearfix"></div>
                 <br/>
                 <button id="GenerateTableValues" class="btn btn-primary">Calculate PSD Values</button>
                 <br/> <br/>
-                <div id="exampleTable"></div>
+                
+                <!-- Table is rendered to this element -->
+                <div id="exampleTable"></div> 
             </div>
         </div>
     </div>
