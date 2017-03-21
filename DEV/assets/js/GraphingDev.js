@@ -51,14 +51,12 @@
         function enableTableGeneration() {
             isTableClean = false;
             $('#GenerateTableValues').prop('disabled', false);
-
         }
 
         // Set table to clean and disable the refresh button
         function disableTableGeneration() {
             isTableClean = true;
             $('#GenerateTableValues').prop('disabled', true);
-
         }
 
         // Generate the table (called when "Calculate PSD Values" button is clicked
@@ -181,6 +179,11 @@
             //    result.push([array1[i], array2[i]]);
             //}
             //return result;
+
+            // Backwards compatable
+            return array1;
+
+            // TODO: Resume here making this array1 vs. frequency (array2)
 
             // resume here plotting each series against frequency 
             var result = array1.map(function (v, i) {
