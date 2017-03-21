@@ -1,0 +1,4 @@
+	// Graphing Dev CSS
+    .clickableRow:hover { cursor: pointer; }
+
+    .highcharts-credits { display: none }
