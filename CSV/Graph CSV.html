@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style> /* set the CSS */
+
+
+/* This won't work without being hosted. IIS on windows, use simple web server on linux... e.g.
+
+Go to your app directory
+Start SimpleHTTPServer
+
+In the terminal
+
+$ cd yourAngularApp
+~/yourAngularApp $ python -m SimpleHTTPServer
+Now, go to localhost:8000 in your browser and the page will show
+
+*/
+
+
+/* TODO: 
+	Refactor this in resharper (e.g. date references shouldbe changed / removed to decimals)
+	refactor out the js and separate from the html / css
+	*/
+	body { font: 12px Arial;}
+
+	path { 
+		stroke: steelblue;
+		stroke-width: 2;
+		fill: none;
+	}
+
+	.axis path,
+	.axis line {
+		fill: none;
+		stroke: grey;
+		stroke-width: 1;
+		shape-rendering: crispEdges;
+	}
+
+</style>
+<body>
+
+	<!-- load the d3.js library -->	
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+
+	<script>
+
+	// Set the dimensions of the canvas / graph
+	var	margin = {top: 30, right: 20, bottom: 30, left: 50},
+	width = 600 - margin.left - margin.right,
+	height = 270 - margin.top - margin.bottom;
+
+	// Parse the date / time
+	// var	parseDate = d3.time.format("%d-%b-%y").parse;
+
+	// Set the ranges
+	var	x = d3.scale.log().range([0, width]);
+	var	y = d3.scale.linear().range([height, 0]);
+
+	// Define the axes
+	var	xAxis = d3.svg.axis().scale(x)
+		.orient("bottom").ticks(5);
+
+	var	yAxis = d3.svg.axis().scale(y)
+		.orient("left").ticks(5);
+
+	// Define the line
+	var	valueline = d3.svg.line()
+		.x(function(d) { return x(d.date); })
+		.y(function(d) { return y(d.close); });
+
+	// Adds the svg canvas
+	var	svg = d3.select("body")
+	.append("svg")
+	.attr("width", width + margin.left + margin.right)
+	.attr("height", height + margin.top + margin.bottom)
+	.append("g")
+	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+	// Get the data
+	d3.csv("data.csv", function(error, data) {
+
+		// set the domain for the graph once the data is available
+		debugger;
+		var aMin = Math.min.apply(Math,data.map(function(o){return o.date;}));
+		var aMax = Math.max.apply(Math,data.map(function(o){return o.date;}));
+		var bMin = Math.min.apply(Math,data.map(function(o){return o.close;}));
+		var bMax = Math.max.apply(Math,data.map(function(o){return o.close;}));
+		// Scale the range of the data
+		x.domain([aMin, aMax]).nice();
+		y.domain([bMin, bMax]).nice();
+		// x.domain([0, .5]);
+		// y.domain([.25, .30]);
+
+		data.forEach(function(d) {
+			d.date  = +d.date; // parseDate(d.date);
+			d.close = +d.close;
+		});
+
+		// Add the valueline path.
+		svg.append("path")	
+			.attr("class", "line")
+			.attr("d", valueline(data));
+
+		// Add the X Axis
+		svg.append("g")		
+			.attr("class", "x axis")
+			.attr("transform", "translate(0," + height + ")")
+			.call(xAxis);
+
+		// Add the Y Axis
+		svg.append("g")		
+			.attr("class", "y axis")
+			.call(yAxis);
+	});
+
+</script>
+</body>
