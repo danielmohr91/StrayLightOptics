@@ -1,32 +1,32 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Location Lookup</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PSD Graphing</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Jquery CDN -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-<!-- Bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- Graphing Library (Highcharts) -->
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <!-- Graphing Library (Highcharts) -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-<!-- Table Library (Handsontable) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.30.1/handsontable.full.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.30.1/handsontable.full.min.css" rel="stylesheet">
+    <!-- Table Library (Handsontable) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.30.1/handsontable.full.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.30.1/handsontable.full.min.css" rel="stylesheet">
 
-<!-- Math Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.10.0/math.min.js"></script>
+    <!-- Math Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.10.0/math.min.js"></script>
 
-<!-- SLO Custom JS and CSS -->
-<script type="text/javascript" src="assets/js/GraphingDev.js"></script>
-<link rel="stylesheet" href="assets/css/GraphingDev.css" />
+    <!-- SLO Custom JS and CSS -->
+    <script type="text/javascript" src="assets/js/GraphingDev.js"></script>
+    <link rel="stylesheet" href="assets/css/GraphingDev.css"/>
 
 </head>
 
@@ -76,55 +76,53 @@
             <div class="panel-body">
 
                 <!-- Parameters for the table -->
-                <form>
+                <form class="form-horizontal" role="form">
                     <p>
                         <i>Enter params</i>
                     </p>
 
-                    <div class="form-group">
+                    <div class="">
                         <div class="fluid-container">
-                            <!-- Input 1 -->
-                            <div class="col-xs-1 vcenter">
-                                <!-- <label for="DealID" class="control-label text-right">Deal ID</label> -->
-                                <p class="text-right vcenter">
-                                    <b>Input A</b>
-                                </p>
-                            </div>
-                            <div class="col-xs-2 vcenter">
-                                <input type="text" class="form-control col-xs-2 vcenter" id="inputA" placeholder="Enter number" onkeypress="validateNumeric(event)">
-                            </div>
 
-                            <!-- Input 2 -->
-                            <div class="col-xs-1 vcenter">
-                                <!-- <label for="DealID" class="control-label text-right">Deal ID</label> -->
-                                <p class="text-right vcenter">
-                                    <b>Input B</b>
-                                </p>
-                            </div>
-                            <div class="col-xs-2 vcenter">
-                                <input type="text" class="form-control col-xs-2 vcenter" id="inputB" placeholder="Enter number" onkeypress="validateNumeric(event)">
+                            <!-- Input 1 -->
+                            <div class="form-group">
+                                <div class="inputLabel col-sm-2">
+                                    <label for="inputA" class="control-label">A</label>
+                                </div>
+                                <div class="inputBox col-sm-4">
+                                    <input type="text" class="form-control" id="inputA" placeholder="Enter number" onkeypress="validateNumeric(event)">
+                                </div>
+                                </div>
+
+
+                                <!-- Input 2 -->
+                                 <div class="form-group">
+                                <div class="inputLabel col-sm-2">
+                                    <label for="inputB" class="control-label">B</label>
+                                </div>
+                                <div class="inputBox col-sm-4">
+                                    <input type="text" class="form-control  id="inputB" placeholder="Enter number" onkeypress="validateNumeric(event)">
+                                </div>
                             </div>
 
                             <!-- Input 3 -->
-                            <div class="col-xs-1 vcenter">
-                                <!-- <label for="DealID" class="control-label text-right">Deal ID</label> -->
-                                <p class="text-right vcenter">
-                                    <b>Input C</b>
-                                </p>
-                            </div>
-                            <div class="col-xs-2 vcenter">
-                                <input type="text" class="form-control col-xs-2 vcenter" id="inputC" placeholder="Enter number" onkeypress="validateNumeric(event)">
-                            </div>
+                            <div class="form-group">
+                                <div class="inputLabel col-sm-2">
+                                    <label for="inputC" class="control-label">C</label>
+                                </div>
+                                <div class="inputBox col-sm-4">
+                                    <input type="text" class="form-control  id="inputC" placeholder="Enter number" onkeypress="validateNumeric(event)">
+                                </div>
+                                </div>
 
-                            <!-- Input 4 -->
-                            <div class="col-xs-1 vcenter">
-                                <!-- <label for="DealID" class="control-label text-right">Deal ID</label> -->
-                                <p class="text-right vcenter">
-                                    <b>AP</b>
-                                </p>
-                            </div>
-                            <div class="col-xs-2 vcenter disabled">
-                                <input type="text" class="form-control col-xs-2 vcenter" id="inputAP" placeholder="AP" readonly>
+                                <!-- Input 4 -->
+                            <div class="form-group">
+                                <div class="inputLabel col-sm-2">
+                                    <label for="inputA" class="control-label">AP</label>
+                                </div>
+                                <div class="inputBox col-sm-4 disabled">
+                                    <input type="text" class="form-control  id="inputAP" placeholder="AP" readonly>
+                                </div>
                             </div>
                         </div>
                     </div>
