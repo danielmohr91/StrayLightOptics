@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Jquery CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="assets/css/bootstrap_Flatly.css"/>-->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Graphing Library (Highcharts) -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -73,7 +75,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title">PSD Calculations</h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body GraphingTableContainer">
 
                 <!-- Parameters for the table -->
                 <form class="form-horizontal" role="form">
@@ -101,7 +103,7 @@
                                         <label for="inputB" class="control-label">B</label>
                                     </div>
                                     <div class="inputBox col-sm-8">
-                                        <input type="text" class="form-control  id=" inputB" placeholder="Enter number" onkeypress="validateNumeric(event)">
+                                        <input type="text" class="form-control" id="inputB" placeholder="Enter number" onkeypress="validateNumeric(event)">
                                     </div>
                                 </div>
 
@@ -111,7 +113,7 @@
                                         <label for="inputC" class="control-label">C</label>
                                     </div>
                                     <div class="inputBox col-sm-8">
-                                        <input type="text" class="form-control  id=" inputC" placeholder="Enter number" onkeypress="validateNumeric(event)">
+                                        <input type="text" class="form-control" id="inputC" placeholder="Enter number" onkeypress="validateNumeric(event)">
                                     </div>
                                 </div>
 
@@ -121,7 +123,7 @@
                                         <label for="inputA" class="control-label">AP</label>
                                     </div>
                                     <div class="inputBox col-sm-8 disabled">
-                                        <input type="text" class="form-control  id=" inputAP" placeholder="AP" readonly>
+                                        <input type="text" class="form-control" id="inputAP" placeholder="AP" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -132,10 +134,14 @@
                 <div class="clearfix"></div>
                 <br/>
                 <button id="GenerateTableValues" class="btn btn-primary">Calculate PSD Values</button>
+                <button id="ResetTableParameters" class="btn btn-default pull-right">Reset</button>
                 <br/> <br/>
 
-                <!-- Table is rendered to this element -->
-                <div id="exampleTable"></div>
+                <!-- Hands on table by default fills its nearest parent element which has a defined width, height and the CSS overflow property set to hidden -->
+                <div class="GraphingTable">
+                    <!-- Table is rendered to this element -->
+                    <div id="exampleTable"></div>
+                </div>
             </div>
         </div>
     </div>

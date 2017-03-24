@@ -1,4 +1,11 @@
-	// Graphing Dev CSS
-    .clickableRow:hover { cursor: pointer; }
+.clickableRow:hover { cursor: pointer; }
 
-    .highcharts-credits { display: none }
+.highcharts-credits { display: none }
+
+.GraphingTableContainer {
+    height: auto;
+    overflow: hidden;
+    width: auto;
+}
+
+.GraphingTable { height: 500px }

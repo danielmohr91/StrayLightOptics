@@ -12,13 +12,9 @@
         // Click Handlers
         $(document)
             .ready(function($, math) {
-
+                
                 // Initiate Form
-                $("#checkboxLogorithmic").attr('checked', isLogorithmic);
-                $("#inputA").val(100000000);
-                $("#inputB").val(1000);
-                $("#inputC").val(1.8);
-                $("#inputAP").val(calculateAp());
+                setFormDefaults();
 
                 $("#inputA").click(function() { enableTableGeneration() });
                 $("#inputB").click(function() { enableTableGeneration() });
@@ -45,7 +41,23 @@
                     .click(function() {
                         generateTable();
                     });
+
+                $("#ResetTableParameters")
+                    .click(function() {
+                        setFormDefaults();
+                        debugger;
+                        generateTable();
+                    });
             });
+
+        // Initialize Form Defaults
+        function setFormDefaults() {
+            $("#checkboxLogorithmic").attr('checked', isLogorithmic);
+            $("#inputA").val(100000000);
+            $("#inputB").val(1000);
+            $("#inputC").val(1.8);
+            $("#inputAP").val(calculateAp());
+        }
 
         // Set table to dirty and enable the refresh button
         function enableTableGeneration() {
@@ -79,6 +91,8 @@
             psdHandsontable = new window.Handsontable(container,
             {
                 data: psdCalculations,
+                scollV: 'auto',
+                scollH: 'auto',
                 rowHeaders: true,
                 // colHeaders: true 
                 colHeaders: [
