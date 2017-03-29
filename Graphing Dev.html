@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+
     <title>PSD Graphing</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,7 +61,7 @@
                 <div class="checkbox">
                     <label><input id="checkboxLogorithmic" type="checkbox" value="">Logorithmic</label>
                 </div>
-                <button id="btnGraph" class="btn btn-primary" type="button">Render Graph</button>
+                <button id="btnGraph" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-stats"></span>&nbsp;Render Graph</button>
                 <div id="graphDiv"></div>
             </div>
         </div>
@@ -131,16 +132,20 @@
                     </div>
                 </form>
 
-                <div class="clearfix"></div>
-                <br/>
-                <button id="GenerateTableValues" class="btn btn-primary">Calculate PSD Values</button>
-                <button id="ResetTableParameters" class="btn btn-default pull-right">Reset</button>
-                <br/> <br/>
+                <div class="container" id="actionsContainer">
+                    <div class="clearfix"></div>
+                    <br/>
+                    <button id="GenerateTableValues" class="btn btn-primary"><span class="glyphicon glyphicon-flash"></span>&nbsp;Calculate PSD Values</button>
+                    <button id="ResetTableParameters" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span>&nbsp;Reset</button>
+                    <br/> <br/>
+                </div>
 
-                <!-- Hands on table by default fills its nearest parent element which has a defined width, height and the CSS overflow property set to hidden -->
-                <div class="GraphingTable">
-                    <!-- Table is rendered to this element -->
-                    <div id="exampleTable"></div>
+                <div class="container" id="tableContainer">
+                    <!-- Hands on table by default fills its nearest parent element which has a defined width, height and the CSS overflow property set to hidden -->
+                    <div class="GraphingTable">
+                        <!-- Table is rendered to this element -->
+                        <div id="exampleTable"></div>
+                    </div>
                 </div>
             </div>
         </div>

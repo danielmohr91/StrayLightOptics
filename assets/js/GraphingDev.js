@@ -45,9 +45,10 @@
                 $("#ResetTableParameters")
                     .click(function() {
                         setFormDefaults();
-                        debugger;
                         generateTable();
                     });
+
+                generateTable(); 
             });
 
         // Initialize Form Defaults
