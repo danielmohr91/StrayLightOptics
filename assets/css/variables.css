@@ -1,0 +1,15 @@
+﻿body {
+    .original {
+        content: ED391B;
+    }
+}
+
+
+element {
+  --main-button-color: #325d88; /* originally ED391B */
+  --main-button-color-gradient: #3b6ea0; /* originally ce1a00 */
+  --main-button-color-hover: #396a9b; /* originally fd492b */
+  --main-button-color-hover-gradient: #3c72a8; /* originally de2a10 */
+  --main-button-shadow: rgba(30, 69, 132, 0.85); /* rgba(255, 96, 96, 0.85) */
+  --main-button-highlight: rgba(62, 121, 216, 0.5); /* rgba(255, 192, 192, 0.5) */
+}
