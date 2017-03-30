@@ -8,4 +8,7 @@
     width: auto;
 }
 
+.inputLabel {
+	pull-right;
+}
 .GraphingTable { height: 500px }
