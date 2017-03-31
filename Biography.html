@@ -3,15 +3,23 @@
 <html>
 <head>
     <title>Biography</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css"/>
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/skel-viewport.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 </head>
 <body class="subpage">
@@ -19,26 +27,42 @@
 
 <!-- Header -->
 <div id="header-wrapper">
-  <header id="header" class="container">
-        <div class="row">
-            <div class="12u">
-
-                <!-- Logo -->
-                <h1>
-                    <a href="#" id="logo">Stray Light Optics</a>
-                </h1>
-
-                <!-- Nav -->
-                <nav id="nav">
-                    <a href="index.html">Homepage</a>
-                    <a href="Biography.html">Bio</a>
-                    <a href="Research.html">Research</a>
-                    <a href="Graphs.html">Graphs</a>
-                    <a href="Graphing Dev.html">Graphing Sandbox</a>
-                </nav>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Stray Light Optics</a>
             </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="Biography.html">Biography</a></li>
+                    <li><a href="Research.html">Research</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Graphs<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Graphs.html">Graphs</a></li>
+                            <li><a href="Graphing Dev.html">Graphing Sandbox</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Graphing Features</li>
+                            <li><a href="Graphing Dev.html#PsdGraph">PSD Graph</a></li>
+                            <li><a href="Graphing Dev.html#PsdChart">PSD Chart</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!--<ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">More Options</a></li>
+                    <li><a href="#">Lorum</a></li>
+                    <li class="active"><a href="#">Ipsum <span class="sr-only">(current)</span></a></li>
+                </ul>-->
+            </div><!--/.nav-collapse -->
         </div>
-    </header>
+    </nav>
 </div>
 
 <!-- Content -->
@@ -55,6 +79,9 @@
                             <h3>About John Schweyen</h3>
                         </header>
                         <p>
+                            TODO: Information on consulting goes here
+                            </p>
+<p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam metus, congue
                             vel suscipit ut, dignissim non risus. Vestibulum ante est, fringilla nec placerat
                             eu, vestibulum vitae diam. Integer eget egestas eros. Duis enim erat, mollis quis

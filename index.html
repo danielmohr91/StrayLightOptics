@@ -6,6 +6,11 @@
         color: inherit !important; 
         text-decoration: inherit !important;
     }
+
+    #NavBarPadding{
+    padding: 70px 0 0;
+}
+
 </style>
 
 <html>
@@ -13,21 +18,58 @@
     <title>Stray Light Optics</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <script src="assets/js/jquery.min.js"></script>
-    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-
-    <link rel="stylesheet" href="assets/css/main.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/skel-viewport.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
 </head>
 
-
-
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Stray Light Optics</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="Biography.html">Biography</a></li>
+                    <li><a href="Research.html">Research</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Graphs<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Graphs.html">Graphs</a></li>
+                            <li><a href="Graphing Dev.html">Graphing Sandbox</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Graphing Features</li>
+                            <li><a href="Graphing Dev.html#PsdGraph">PSD Graph</a></li>
+                            <li><a href="Graphing Dev.html#PsdChart">PSD Chart</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
     <div id="page-wrapper">
      
         <!-- Header -->
@@ -36,28 +78,7 @@
     <!-- Header partial view
     No permissions... sadness
     <link rel="import" href="Header.html"> -->
-
-    <header id="header" class="container">
-        <div class="row">
-            <div class="12u">
-
-                <!-- Logo -->
-                <h1>
-                    <a href="#" id="logo">Stray Light Optics</a>
-                </h1>
-
-                <!-- Nav -->
-                <nav id="nav">
-                    <a href="index.html">Homepage</a>
-                    <a href="Biography.html">Bio</a>
-                    <a href="Research.html">Research</a>
-                    <a href="Graphs.html">Graphs</a>
-                    <a href="Graphing Dev.html">Graphing Sandbox</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
+            <div id="NavBarPadding"></div>
     <div id="banner">
         <div class="container">
             <div class="row">
@@ -111,8 +132,7 @@
                         </a>
                         <h2>Research</h2>
                         <p>
-                            Brief overview on research goes here<br>
-                            Picture above links to full research
+                            TODO: Brief overview on research goes here
                         </p>
                     </section>
 
@@ -126,9 +146,7 @@
                         </a>
                         <h2>Bio</h2>
                         <p>
-                            Information on John Schweyen here<br>
-                            Information on consulting goes on bio page<br>
-                            Picture above links to bio page
+                            TODO: Information on John Schweyen here. Maybe mention consulting? <br>
                         </p>
                     </section>
 
@@ -143,10 +161,8 @@
                         <h2>Graphing</h2>
                         <p>
                             Information on graphs here. <br>
-                            Picture above links to interactive graphing page.
                         </p>
                     </section>
-
                 </div>
             </div>
         </div>
@@ -164,7 +180,7 @@
                     <section>
                         <header>
                             <h2>Who am I?</h2>
-                            <h3>A subheading about who I am</h3>
+                            <h3>TODO: A subheading about who I am</h3>
                         </header>
                         <a href="#" class="feature-image">
                             <img src="images/pic05.jpg" alt=""/>
@@ -183,11 +199,11 @@
                     <section>
                         <header>
                             <h2>What I Do</h2>
-                            <h3>A subheading about what I do</h3>
+                            <h3>TODO: A subheading about what I do</h3>
                         </header>
                         <ul class="check-list">
-                            <li>Sed mattis quis rutrum accum</li>
-                            <li>Eu varius nibh suspendisse lorem</li>
+                            <li>Strategic Research</li>
+                            <li>Stray Light Optics Consulting</li>
                             <li>Magna eget odio amet mollis justo</li>
                             <li>Facilisis quis sagittis mauris</li>
                             <li>Amet tellus gravida lorem ipsum</li>
@@ -201,7 +217,7 @@
                     <section>
                         <header>
                             <h2>What People Are Saying</h2>
-                            <h3>And a final subheading about clients or research</h3>
+                            <h3>TODO: And a final subheading about clients or research</h3>
                         </header>
                         <ul class="quote-list">
                             <li>
@@ -332,13 +348,7 @@
 
 </div>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/skel-viewport.min.js"></script>
-<script src="assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="assets/js/main.js"></script>
+
 
 </body>
 </html>

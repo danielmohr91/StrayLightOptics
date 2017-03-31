@@ -1,4 +1,51 @@
 ﻿<!DOCTYPE html>
+
+<style>
+
+       input {
+        max-width: 100%;
+    } 
+
+/* get a larger input, and align it with submit button*/
+.form-inline .form-group > div.col-xs-8 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/*vertical align label*/
+.form-inline label {
+    line-height: 34px;
+}
+
+/*force inline control to fit container width*/
+/*http://getbootstrap.com/css/#forms-inline*/
+.form-inline .form-control {
+    width: 100%;
+}
+
+/* Navbar overlaps when id linking. Pad here to avoid */
+#PsdGraph{
+    padding: 70px 0 0;
+    margin: -70px 0 0;
+}
+
+#PsdChart{
+    padding: 70px 0 0;
+    margin: -70px 0 0;
+}
+
+/* Pad Space for NavBar at top of page*/
+#NavBarPadding{
+    padding: 70px 0 0;
+}
+/*Reset margin-bottom for our multiline form*/
+/*@media (min-width: 768px) {
+  .form-inline .form-group {
+    margin-bottom: 15px;
+  }
+}*/
+</style>
+
 <html lang="en">
 <head>
 
@@ -34,8 +81,49 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Stray Light Optics</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="Biography.html">Biography</a></li>
+                    <li><a href="Research.html">Research</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Graphs<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Graphs.html">Graphs</a></li>
+                            <li><a href="Graphing Dev.html">Graphing Sandbox</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Graphing Features</li>
+                            <li><a href="Graphing Dev.html#PsdGraph">PSD Graph</a></li>
+                            <li><a href="Graphing Dev.html#PsdChart">PSD Chart</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!--<ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">More Options</a></li>
+                    <li><a href="#">Lorum</a></li>
+                    <li class="active"><a href="#">Ipsum <span class="sr-only">(current)</span></a></li>
+                </ul>-->
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
 
 <div class="container">
+    <!--<div class="clearfix"></div>
+    <br /><div class="clearfix"></div>
+<br /><div class="clearfix"></div>
+<br />-->
+    <div id="NavBarPadding"></div>
     <h1>
         <span class="glyphicon glyphicon-signal"></span> Graphing Mockup
     </h1>
@@ -54,6 +142,7 @@
     <!-- Force new line -->
     <div class="clearfix"></div>
     <div class="fluid-container">
+        <div id="PsdGraph"></div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Graphing</h3>
@@ -73,121 +162,70 @@
     <div class="clearfix"></div>
     <div class="fluid-container">
 
+        <div id="PsdChart"></div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">PSD Calculations</h3>
             </div>
             <div class="panel-body GraphingTableContainer">
 
-                <form class="form form-inline">
-                    <label class="sr-only" for="inlineFormInput">Name</label>
-                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Jane Doe">
+                <p>
+                    <i>Enter PSD Graphing Parameters</i>
+                </p>
 
-                    <label class="sr-only" for="inlineFormInput1">Name</label>
-                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput1" placeholder="Jane Doe">
+                <div class="container">
+                    <form class="form form-inline" role="form">
 
-                    <label class="sr-only" for="inlineFormInput2">Name</label>
-                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput2" placeholder="Jane Doe">
-
-                    <label class="sr-only" for="inlineFormInpu3">Name</label>
-                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput2" placeholder="Jane Doe">
-
-                    <label class="sr-only" for="inlineFormInput4">Name</label>
-                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput3" placeholder="Jane Doe">
-
-
-</form>
-                    <!-- Parameters for the table -->
-                    <form class="form form-horizontal form-inline" role="form-inline">
-                        <label class="sr-only" for="inlineFormInput1">Name</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput1" placeholder="Jane Doe">
-
-                        <label class="sr-only" for="inlineFormInput2">Name</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput2" placeholder="Jane Doe">
-
-                        <label class="sr-only" for="inlineFormInpu3">Name</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput2" placeholder="Jane Doe">
-
-                        <label class="sr-only" for="inlineFormInput4">Name</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput3" placeholder="Jane Doe">
-
-                        <p>
-                            <i>Enter params</i>
-                        </p>
-
-                        <h4>resume here on the inputs...</h4>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                        <!-- http://getbootstrap.com/components/ -->
-
-
-
-                        <div class="">
-                            <div class="fluid-container">
-                                <div class="row">
-                                    <!-- Input 1 -->
-                                    <div class="formInputGroup col-sm-3">
-                                        <div class="inputLabel col-md-4">
-                                            <label for="inputA" class="control-label">A</label>
-                                        </div>
-                                        <div class="inputBox col-sm-8">
-                                            <input type="text" class="form-control" id="inputA" placeholder="Enter number" onkeypress="validateNumeric(event)">
-                                        </div>
-                                    </div>
-
-
-                                    <!-- Input 2 -->
-                                    <div class="formInputGroup col-sm-3">
-                                        <div class="inputLabel col-md-4">
-                                            <label for="inputB" class="control-label">B</label>
-                                        </div>
-                                        <div class="inputBox col-sm-8">
-                                            <input type="text" class="form-control" id="inputB" placeholder="Enter number" onkeypress="validateNumeric(event)">
-                                        </div>
-                                    </div>
-
-                                    <!-- Input 3 -->
-                                    <div class="formInputGroup col-sm-3">
-                                        <div class="inputLabel col-md-4">
-                                            <label for="inputC" class="control-label">C</label>
-                                        </div>
-                                        <div class="inputBox col-sm-8">
-                                            <input type="text" class="form-control" id="inputC" placeholder="Enter number" onkeypress="validateNumeric(event)">
-                                        </div>
-                                    </div>
-
-                                    <!-- Input 4 -->
-                                    <div class="formInputGroup col-sm-3">
-                                        <div class="inputLabel col-md-4">
-                                            <label for="inputA" class="control-label">AP</label>
-                                        </div>
-                                        <div class="inputBox col-sm-8 disabled">
-                                            <input type="text" class="form-control" id="inputAP" placeholder="AP" readonly>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+                            <label for="inputA" class="col-xs-4">A</label>
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" id="inputA" placeholder="Input A">
                             </div>
                         </div>
+
+                        <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+                            <label for="inputB" class="col-xs-4">B</label>
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" id="inputB" placeholder="Input B">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+                            <label for="inputC" class="col-xs-4">C</label>
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" id="inputC" placeholder="Input C">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+                            <label for="inputAP" class="col-xs-4">AP</label>
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" id="inputAP" placeholder="Output AP">
+                            </div>
+                        </div>
+
                     </form>
+                </div>
 
-                    <div class="container" id="actionsContainer">
-                        <div class="clearfix"></div>
-                        <br />
+
+                  
+                    <div class="" id="actionsContainer">
+                        <div class="clearfix"></div><br />
                         <button id="GenerateTableValues" class="btn btn-primary"><span class="glyphicon glyphicon-flash"></span>&nbsp;Calculate PSD Values</button>
-                        <button id="ResetTableParameters" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span>&nbsp;Reset</button>
-                        <br /> <br />
+                        <button id="ResetTableParameters" class="btn btn-danger pull-right float-md-right"><span class="glyphicon glyphicon-trash"></span>&nbsp;Reset</button>
                     </div>
-
-                    <div class="container" id="tableContainer">
+                   
+ 
+                    <div class="" id="tableContainer">
+                        <div class="clearfix"></div><br />
                         <!-- Hands on table by default fills its nearest parent element which has a defined width, height and the CSS overflow property set to hidden -->
                         <div class="GraphingTable">
                             <!-- Table is rendered to this element -->
                             <div id="exampleTable"></div>
                         </div>
                     </div>
-</div>
+
+            </div>
         </div>
     </div>
 

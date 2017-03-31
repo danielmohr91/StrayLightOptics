@@ -208,7 +208,7 @@
 
         }
 
-        function calculateAp() {
+        function calculateAp() { 
             var a = parseFloat($("#inputA").val());
             var b = parseFloat($("#inputB").val());
             var c = parseFloat($("#inputC").val());
