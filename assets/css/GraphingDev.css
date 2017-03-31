@@ -12,3 +12,16 @@
 	pull-right;
 }
 .GraphingTable { height: 500px }
+
+#content a {
+    color: #ffffff;
+}
+
+.hide-overflow {
+    overflow:hidden; 
+    word-wrap:break-word
+}
+
+#content h3 {
+    color: inherit;
+}

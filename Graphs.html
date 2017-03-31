@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <!-- SLO Styling -->
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <!-- Scripts -->
@@ -18,17 +18,13 @@
     <script src="assets/js/main.js"></script>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
 
-    <!-- Misc Libraries -->
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="http://maurizzzio.github.io/function-plot/js/function-plot.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    
-    <!-- Highcharts -->
+    <!-- Graphing Specific Libraries below this line -->
+
+    <!-- Graphing Library (Highcharts) -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
@@ -39,49 +35,69 @@
     <!-- Math Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.10.0/math.min.js"></script>
 
-    <!-- SLO Custom JS and CSS -->
+    <!-- Custom Graping JS and CSS -->
     <script type="text/javascript" src="assets/js/GraphingDev.js"></script>
     <link rel="stylesheet" href="assets/css/GraphingDev.css"/>
 
 </head>
 <body class="subpage">
 
-    <nav id="navBar" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Stray Light Optics</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="Biography.html">Biography</a></li>
-                    <li><a href="Research.html">Research</a></li>
-                    <li  class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Graphs<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="Graphs.html">Graphs</a></li>
-                            <li><a href="Graphing Dev.html">Graphing Sandbox</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Graphing Features</li>
-                            <li><a href="Graphing Dev.html#PsdGraph">PSD Graph</a></li>
-                            <li><a href="Graphing Dev.html#PsdChart">PSD Chart</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <!--<ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">More Options</a></li>
-                    <li><a href="#">Lorum</a></li>
-                    <li class="active"><a href="#">Ipsum <span class="sr-only">(current)</span></a></li>
-                </ul>-->
-            </div><!--/.nav-collapse -->
+<nav id="navBar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Stray Light Optics</a>
         </div>
-    </nav>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="Biography.html">Biography</a>
+                </li>
+                <li>
+                    <a href="Research.html">Research</a>
+                </li>
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Graphs<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="Graphs.html">Graphs</a>
+                        </li>
+                        <li>
+                            <a href="Graphing Dev.html">Graphing Sandbox</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Graphing Features</li>
+                        <li>
+                            <a href="Graphing Dev.html#PsdGraph">PSD Graph</a>
+                        </li>
+                        <li>
+                            <a href="Graphing Dev.html#PsdChart">PSD Chart</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!--<ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">More Options</a>
+                </li>
+                <li>
+                    <a href="#">Lorum</a>
+                </li>
+                <li class="active">
+                    <a href="#">Ipsum <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>-->
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
 
 <!-- Content -->
 <div id="content-wrapper">
@@ -89,89 +105,120 @@
         <div class="container">
             <div class="row">
                 <div class="12u 12u(mobile)">
-                    <div class="clearfix"></div><br /><br />
+                    <div class="clearfix hide-overflow"></div><br/><br/>
 
                     <!-- Main Content -->
                     <section>
-                        <header>
-                            <h2>PSD Graphing Fun</h2>
-                            <h3>Distribution of power into frequency components composing that signal</h3>
-                        </header>
 
+                        <!-- TODO: panels overflow above 736px. Resolve. https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&sqi=2&ved=0ahUKEwiksJqqzYHTAhUL0YMKHZmUCNsQFgguMAM&url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F41012417%2Fissue-regarding-bootstrap-collapse-and-its-effect-on-dom&usg=AFQjCNGZSIOIFlapBw1C1Td_l5P1z7SqCg&sig2=hDsmmqQZtcFsAwKa8NcOpA&bvm=bv.151426398,d.eWE&cad=rja -->
                         <!-- Graphing Start (Pull From "Graphing Dev.html")-->
+                        <div class="container">
 
-                        <div class="fluid-container">
+                            <div id="NavBarPadding"></div>
+                            <h1>
+                                <span class="glyphicon glyphicon-signal"></span> Graphing Mockup
+                            </h1>
+                            <h5>Calculus Based Graphing</h5>
+                            <div class="text-muted container">
+                                <i>Render Graph given input params for SLO eq.</i>
+                                <div class="clearfix"></div>
+                                <a href="http://www.highcharts.com/demo" class="btn btn-default" role="button">Graphing Options</a>
+                            </div>
+                        </div>
 
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">PSD Calculations</h3>
+                        <br>
+
+                        <div class="container">
+
+                            <!-- Force new line -->
+                            <div class="clearfix"></div>
+                            <div class="fluid-container">
+                                <div id="PsdGraph"></div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Graphing</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="checkbox">
+                                            <label><input id="checkboxLogorithmic" type="checkbox" value="">Logorithmic</label>
+                                        </div>
+                                        <button id="btnGraph" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-stats"></span>&nbsp;Render Graph</button>
+                                        <div id="graphDiv"></div>
+                                    </div>
                                 </div>
-                                <div class="panel-body">
 
-                                    <!-- Parameters for the table -->
-                                    <form class="form-horizontal" role="form">
+                            </div>
+
+                            <!-- Force new line -->
+                            <div class="clearfix"></div>
+                            <div class="fluid-container">
+
+                                <div id="PsdChart"></div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">PSD Calculations</h3>
+                                    </div>
+                                    <div class="panel-body GraphingTableContainer">
+
                                         <p>
-                                            <i>Enter params</i>
+                                            <i>Enter PSD Graphing Parameters</i>
                                         </p>
 
-                                        <div class="">
-                                            <div class="fluid-container">
-                                                <div class="row">
-                                                    <!-- Input 1 -->
-                                                    <div class="formInputGroup col-sm-3">
-                                                        <div class="inputLabel col-sm-4">
-                                                            <label for="inputA" class="control-label">A</label>
-                                                        </div>
-                                                        <div class="inputBox col-sm-8">
-                                                            <input type="text" class="form-control" id="inputA" placeholder="Enter number" onkeypress="validateNumeric(event)">
-                                                        </div>
-                                                    </div>
+                                        <div class="container">
+                                            <form class="form form-inline" role="form">
 
-
-                                                    <!-- Input 2 -->
-                                                    <div class="formInputGroup  col-sm-3">
-                                                        <div class="inputLabel col-sm-4">
-                                                            <label for="inputB" class="control-label">B</label>
-                                                        </div>
-                                                        <div class="inputBox col-sm-8">
-                                                            <input type="text" class="form-control" id="inputB" placeholder="Enter number" onkeypress="validateNumeric(event)">
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Input 3 -->
-                                                    <div class="formInputGroup  col-sm-3">
-                                                        <div class="inputLabel col-sm-4">
-                                                            <label for="inputC" class="control-label">C</label>
-                                                        </div>
-                                                        <div class="inputBox col-sm-8">
-                                                            <input type="text" class="form-control" id="inputC" placeholder="Enter number" onkeypress="validateNumeric(event)">
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Input 4 -->
-                                                    <div class="formInputGroup  col-sm-3">
-                                                        <div class="inputLabel col-sm-4">
-                                                            <label for="inputA" class="control-label">AP</label>
-                                                        </div>
-                                                        <div class="inputBox col-sm-8 disabled">
-                                                            <input type="text" class="form-control" id="inputAP" placeholder="AP" readonly>
-                                                        </div>
+                                                <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+                                                    <label for="inputA" class="col-xs-4">A</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control" id="inputA" placeholder="Input A">
                                                     </div>
                                                 </div>
+
+                                                <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+                                                    <label for="inputB" class="col-xs-4">B</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control" id="inputB" placeholder="Input B">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+                                                    <label for="inputC" class="col-xs-4">C</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control" id="inputC" placeholder="Input C">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+                                                    <label for="inputAP" class="col-xs-4">AP</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control" id="inputAP" placeholder="Output AP">
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+
+
+                                        <div class="" id="actionsContainer">
+                                            <div class="clearfix"></div><br/>
+                                            <button id="GenerateTableValues" class="btn btn-primary"><span class="glyphicon glyphicon-flash"></span>&nbsp;Calculate PSD Values</button>
+                                            <button id="ResetTableParameters" class="btn btn-danger pull-right float-md-right"><span class="glyphicon glyphicon-trash"></span>&nbsp;Reset</button>
+                                        </div>
+
+
+                                        <div class="" id="tableContainer">
+                                            <div class="clearfix"></div><br/>
+                                            <!-- Hands on table by default fills its nearest parent element which has a defined width, height and the CSS overflow property set to hidden -->
+                                            <div class="GraphingTable">
+                                                <!-- Table is rendered to this element -->
+                                                <div id="exampleTable"></div>
                                             </div>
                                         </div>
-                                    </form>
 
-                                    <div class="clearfix"></div>
-                                    <br/>
-                                    <button id="GenerateTableValues" class="btn btn-primary">Calculate PSD Values</button>
-                                    <button id="ResetTableParameters" class="btn btn-default pull-right">Reset</button>
-                                    <br/> <br/>
-
-                                    <!-- Table is rendered to this element -->
-                                    <div class="GraphingTableContainer" id="exampleTable"></div>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
 
 
