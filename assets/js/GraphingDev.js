@@ -182,10 +182,10 @@
         }
 
         function getPropertyVsFrequency(propertyName) {
-            var freq = psdHandsontable.getDataAtProp("freq");
+            //var freq = psdHandsontable.getDataAtProp("freq");
+            var step = psdHandsontable.getDataAtProp("step");
             var target = psdHandsontable.getDataAtProp(propertyName);
-            return (combineArraysToTwoDimensionalArray(target, freq));
-
+            return (combineArraysToTwoDimensionalArray(step, target));
         }
 
         function combineArraysToTwoDimensionalArray(array1, array2) {
@@ -196,13 +196,15 @@
             //return result;
 
             // Backwards compatable
-            return array1;
+            var backwardsCompatable = false;
+            if (backwardsCompatable)
+                return array1;
 
             // TODO: Resume here making this array1 vs. frequency (array2)
 
             // resume here plotting each series against frequency 
             var result = array1.map(function (v, i) {
-                return [v, array2[i]];
+                return [parseFloat(v), parseFloat(array2[i])];
             });
             return result;
 
