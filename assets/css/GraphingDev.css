@@ -8,20 +8,17 @@
     width: auto;
 }
 
-.inputLabel {
-	pull-right;
-}
+.inputLabel { pull-right; }
+
 .GraphingTable { height: 500px }
 
-#content a {
-    color: #ffffff;
-}
+#content a { color: #ffffff; }
 
 .hide-overflow {
-    overflow:hidden; 
-    word-wrap:break-word
+    overflow: hidden;
+    word-wrap: break-word
 }
 
-#content h3 {
-    color: inherit;
-}
+#content h3 { color: inherit; }
+
+input { max-width: 100%; }

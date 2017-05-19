@@ -1,22 +1,20 @@
-	// Dashboard CSS
-	#dashboard .axis path {
-        fill: none;
-        stroke: white;
-        stroke-width: 1px;
+/*Dashboard CSS*/
+#dashboard .axis path {
+    fill: none;
+    stroke: white;
+    stroke-width: 1px;
+}
 
-    }
-    #dashboard .axis text  {
-        color:white;
-    }
-    #dashboard .axis line {
-        fill: none;
-        stroke: white;
-        stroke-width: 2px;
-    }
+#dashboard .axis text { color: white; }
 
-    #dashboard .tick{
-        fill: white;
-    }
-    #dashboard body{
-        background-color: #092946;
-    }
+#dashboard .axis line {
+    fill: none;
+    stroke: white;
+    stroke-width: 2px;
+}
+
+#dashboard .tick { fill: white; }
+
+#dashboard body { background-color: #092946; }
+
+input { max-width: 100%; }
