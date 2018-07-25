@@ -49,6 +49,10 @@
                     });
 
                 generateTable(); 
+
+                if (!isTableClean)
+                    generateTable();
+                loadGraph();
             });
 
         // Initialize Form Defaults
