@@ -29,11 +29,11 @@
 <html>
 <head>
     <title>Stray Light Optics</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <!-- SLO Styling -->
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <!-- Scripts -->
@@ -44,14 +44,16 @@
     <script src="assets/js/main.js"></script>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121892363-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() { dataLayer.push(arguments); }
+
         gtag('js', new Date());
 
         gtag('config', 'UA-121892363-1');
@@ -60,7 +62,7 @@
 </head>
 
 <body>
-    
+
 <nav id="navBar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -74,28 +76,28 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active disabled">
+                <li class="active">
                     <a href="index.html">Home</a>
                 </li>
-               <li class="disabled">
-                    <a href="#">About</a>
+                <li>
+                    <a href="About.html">About</a>
                 </li>
-               <li class="disabled">
-                    <a href="#">References</a>
+                <li>
+                    <a href="References.html">References</a>
                 </li>
-                <li class="dropdown disabled">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Computational Toys<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                       <li class="disabled">
-                            <a href="#">Graphs</a>
+                        <li>
+                            <a href="Graphs.html">Graphs</a>
                         </li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">Graphing Features</li>
-                       <li class="disabled">
-                            <a href="#">PSD Graph</a>
+                        <li>
+                            <a href="Graphing Dev.html#PsdGraph">PSD Graph</a>
                         </li>
-                       <li class="disabled">
-                            <a href="#">PSD Chart</a>
+                        <li>
+                            <a href="Graphing Dev.html#PsdChart">PSD Chart</a>
                         </li>
                     </ul>
                 </li>
@@ -108,52 +110,230 @@
 
 <div id="page-wrapper">
 
-<!-- Header -->
-<div id="header-wrapper">
+    <!-- Header -->
+    <div id="header-wrapper">
 
-    <div class="clearfix"></div><br/><br/>
-    <div class="container clear-text">
-        <div class="jumbotron">
-            <h1><span class="transparent-icon"><img src="images/hardhat.png"></span>Under Construction</h1>
-            <p>
-                Site is currently under development. Check back soon!
-            </p>
-        </div>
+        <!--<div class="clearfix"></div><br/><br/>
+        <div class="container clear-text">
+            <div class="jumbotron">
+                <h1><span class="transparent-icon"><img src="images/hardhat.png"></span>Under Construction</h1>
+                <p>
+                    Site is currently under development. Check back soon!
+                </p>
+            </div>
+        </div>-->
+
+        <!--<div class="row">
+            <div class="6u 12u(mobile)">
+
+                <p>References Summary</p>
+
+                <a href="Graphing Dev.html" class="button-big clean-button">Stray Light Optics Graphs</a>
+            </div>
+            <div class="6u 12u(mobile)">
+
+
+                <a href="#" class="bordered-feature-image">
+                    <img src="images/lightwaves.jpg" alt=""/>
+                </a>
+                <a href="#" class="feature-image">
+                    <img src="images/lightwaves-banner.jpg" alt=""/>
+                </a>
+
+            </div>
+        </div>-->
+
     </div>
-
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-	
 </div>
 
+<!-- Features -->
+<div id="features-wrapper">
+
+    <div id="features">
+        <div class="container">
+            <section>
+                <div class="row">
+                    <div class="12u 12u(mobile)">
+                        <h1 style="color: white">Stray Light Optics</h1>
+                        <a href="#" class="feature-image">
+                            <img src="images/lightwaves-banner.jpg" alt=""/>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <br/>
+
+        <div class="container">
+            <section>
+                <div class="row">
+                    <div class="3u 12u(mobile)">
+
+                        <section>
+                            <a href="Graphs.html" class="bordered-feature-image">
+                                <img src="images/light.jpg" alt=""/>
+                            </a>
+                            <h2>What is Stray Light Optics?</h2>
+                            <p>
+                                Stray light is light being detected but that does not belong to the bandwidth of the chosen measuring wavelength. Stray light is caused by light scattering, diffraction or malfunction of the instrument.
+                            </p>
+                        </section>
+
+                    </div>
+                    <div class="3u 12u(mobile)">
+
+                        <section>
+                            <a href="References.html" class="bordered-feature-image">
+                                <img src="images/research.jpg" alt=""/>
+                            </a>
+                            <h2>References</h2>
+                            <p>
+                                Stray light is unwanted light – unwanted because it degrades system performance. Overview on research, and list of references can be seen here.
+                            </p>
+                        </section>
+
+                    </div>
+                    <div class="3u 12u(mobile)">
+
+                        <section>
+                            <a href="About.html" class="bordered-feature-image">
+                                <img class="" src="images/light-rays.jpg" alt=""/>
+                            </a>
+                            <h2>About</h2>
+                            <p>
+                                I specialize in Straylight Analysis, Illumination Systems design, and Optical Simulation. Background on my research and contact information can be seen here.
+
+                            </p>
+                        </section>
+
+                    </div>
+                    <div class="3u 12u(mobile)">
+
+                        <section>
+                            <a href="Graphs.html" class="bordered-feature-image">
+                                <img src="images/psd.jpg" alt=""/>
+                            </a>
+                            <h2>Graphing</h2>
+                            <p>
+                                Power Spectral Density (PSD) is the frequency response of a random or periodic signal. It tells us where the average power is distributed as a function of frequency. An interactive graph of the PSD function is available here.
+                            </p>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<div id="" style="background-color: #3e3f3a; display: none">
+    <!-- content-wrapper for grey background, features-wrapper for black -->
+    <div id="content">
+        <div class="container">
+            <section id="test">
+                <div class="row">
+                    <div class="4u 12u(mobile)">
+
+                        <section>
+                            <header>
+                                <h2>Who am I?</h2>
+                                <h3>TODO: A subheading about who I am</h3>
+                            </header>
+                            <a href="#" class="feature-image">
+                                <img src="images/pic05.jpg" alt=""/>
+                            </a>
+                            <p>
+                                TODO: Fill this in. E.g. I specialize in Straylight Analysis, Illumination Systems design, and Optical Simulation.
+                            </p>
+                        </section>
+
+                    </div>
+                    <div class="4u 12u(mobile)">
+
+                        <section>
+                            <header>
+                                <h2>What I Do</h2>
+                                <h3>TODO: A subheading about what I do</h3>
+                            </header>
+                            <ul class="check-list">
+                                <li>Strategic References</li>
+                                <li>Straylight Optics Consulting</li>
+                                <li>Straylight Analysis</li>
+                                <li>Illumination Systems design</li>
+                                <li>Optical Simulation</li>
+                            </ul>
+                        </section>
+
+                    </div>
+                    <div class="4u 12u(mobile)">
+
+                        <section>
+                            <header>
+                                <h2>What People Are Saying</h2>
+                                <h3>TODO: And a final subheading about clients or References</h3>
+                            </header>
+                            <ul class="quote-list">
+                                <li>
+                                    <img src="images/pic06.jpg" alt=""/>
+                                    <p>"Neque nisidapibus mattis"</p>
+                                    <span>Jane Doe, CEO of UntitledCorp</span>
+                                </li>
+                                <li>
+                                    <img src="images/pic07.jpg" alt=""/>
+                                    <p>"Lorem ipsum consequat!"</p>
+                                    <span>John Doe, President of FakeBiz</span>
+                                </li>
+                                <li>
+                                    <img src="images/pic08.jpg" alt=""/>
+                                    <p>"Magna veroeros amet tempus"</p>
+                                    <span>Mary Smith, CFO of UntitledBiz</span>
+                                </li>
+                            </ul>
+                        </section>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="clearfix" style="padding-bottom: 2em"></div>
+    <br/>
+</div>
+
+
+<!-- Footer -->
+<div id="footer-wrapper">
+    <footer id="footer" class="container">
+        <div class="row">
+            <div class="12u 12u(mobile)">
+                <section>
+                    <div>
+                        <div class="row">
+                            <div class="6u 6u(mobile)">
+                                <h5>Disclaimer about Information Accuracy</h5>
+                                <p>
+                                    <small>
+                                        Although every effort has been made to provide complete and accurate information, no warranties, express or implied, or representations as to the accuracy of content on this website are made. We assume no liability or responsibility for any error or omissions in the information contained in the website or the operation of the website.
+                                    </small>
+                                </p>
+                            </div>
+                            <div class="6u 6u(mobile)">
+                                <h5>Links to Exteral Material</h5>
+                                <p>
+                                    <small>This website contains links to other websites and information provided by unaffiliated persons. Such links are not endorsements or referrals of any products, services or information contained in such websites, and no information in any such website has been endorsed or approved hereby. No claims, promises, or guarantees about the completeness, accuracy, currency, content or quality of information contained in the links to and from this website are made.</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
+</div>
 
 <div id="copyright">
     &copy; Stray Light Optics. All rights reserved.
 </div>
 
-</div>
 
 </body>
 </html>
